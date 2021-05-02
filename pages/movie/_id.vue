@@ -87,9 +87,7 @@ export default {
     await store.dispatch('movie/searchMovieWithId', {
       id: params.id
     })
-    return {
-      theMovie: store.state.movie.theMovie
-    }
+    console.log(store.state.movie.theMovie)
   },
   data() {
     return {
@@ -98,7 +96,8 @@ export default {
   },
   computed: {
     ...mapState('movie', [
-      'loading'
+      'loading',
+      'theMovie'
     ])
   },
   methods: {
@@ -118,7 +117,6 @@ export default {
     }
   },
   head() {
-    console.log(this.theMovie)
     return {
       meta: [
         { hid: 'og:type', property: 'og:type', content: 'website' },

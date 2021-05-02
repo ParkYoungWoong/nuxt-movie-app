@@ -97,6 +97,7 @@ export const actions = {
         theMovie: res.data
       })
     } catch (error) {
+      console.log(error)
       commit('updateState', {
         theMovie: {}
       })
@@ -110,5 +111,5 @@ export const actions = {
 
 // eslint-disable-next-line
 async function _fetchMovie(payload) {
-  return await axios.post('/api/movie', payload)
+  return await axios.post('http://localhost:3000/api/movie', payload)
 }
