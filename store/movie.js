@@ -111,5 +111,5 @@ export const actions = {
 
 // eslint-disable-next-line
 async function _fetchMovie(payload) {
-  return await axios.post('http://localhost:3000/api/movie', payload)
+  return await axios.post(`${process.env.CLIENT_URL}/api/movie`, payload)
 }
