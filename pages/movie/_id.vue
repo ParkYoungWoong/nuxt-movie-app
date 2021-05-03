@@ -87,9 +87,6 @@ export default {
     await store.dispatch('movie/searchMovieWithId', {
       id: params.id
     })
-    console.log(store.state.movie.theMovie)
-  },
-  data() {
     return {
       imageLoading: true
     }
@@ -120,11 +117,11 @@ export default {
     return {
       meta: [
         { hid: 'og:type', property: 'og:type', content: 'website' },
-        { hid: 'og:site_name', property: 'og:type', content: 'Nuxt Movie App' },
-        { hid: 'og:title', property: 'og:type', content: this.theMovie.Title },
-        { hid: 'og:description', property: 'og:type', content: this.theMovie.Plot },
-        { hid: 'og:image', property: 'og:type', content: this.theMovie.Poster },
-        { hid: 'og:url', property: 'og:type', content: '' }
+        { hid: 'og:site_name', property: 'og:site_name', content: 'Nuxt Movie App' },
+        { hid: 'og:title', property: 'og:title', content: this.theMovie.Title },
+        { hid: 'og:description', property: 'og:description', content: this.theMovie.Plot },
+        { hid: 'og:image', property: 'og:image', content: this.theMovie.Poster },
+        { hid: 'og:url', property: 'og:url', content: `${process.env.CLIENT_URL}${this.$route.fullPath}` }
       ]
     }
   }
