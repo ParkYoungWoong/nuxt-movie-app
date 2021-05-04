@@ -2,7 +2,7 @@ export default {
   install(Vue) {
     Vue.prototype.$loadImage = src => {
       return new Promise(resolve => {
-        if (!process.client) {
+        if (process.server) {
           resolve()
           return
         }
