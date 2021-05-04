@@ -1,6 +1,7 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils'
-import store from '~/store'
-import router from '~/routes'
+import VueRouter from 'vue-router'
+import Vuex from 'vuex'
+import about from '~/store/about'
 import Header from '~/components/Header'
 
 describe('components/Header.vue', () => {
@@ -8,10 +9,23 @@ describe('components/Header.vue', () => {
 
   beforeEach(() => {
     const localVue = new createLocalVue()
+    localVue.use(VueRouter)
+    localVue.use(Vuex)
+
+    const router = new VueRouter
+    const store = new Vuex.Store({
+      modules: {
+        about
+      }
+    })
+
     wrapper = shallowMount(Header, {
       localVue,
       store,
-      router
+      router,
+      stubs: {
+        NuxtLink: true
+      }
     })
     router.push('/movie/tt1234567')
   })

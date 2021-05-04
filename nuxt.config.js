@@ -55,6 +55,17 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    babel: {
+      presets: ['@babel/preset-env'],
+      plugins: [
+        ['@babel/plugin-transform-runtime']
+      ]
+    },
+    postcss: {
+      plugins: [
+        'autoprefixer'
+      ]
+    }
   },
 
   serverMiddleware: [

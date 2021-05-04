@@ -1,28 +1,42 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils'
-import store from '~/store'
-import router from '~/routes'
+import VueRouter from 'vue-router'
+import Vuex from 'vuex'
+import movie from '~/store/movie'
 import loadImage from '~/plugins/loadImage'
-import Movie from '~/routes/Movie'
+import Movie from '~/pages/movie/_id'
 
-describe('routes/Movie.vue', () => {
+describe('pages/movie/_id.vue', () => {
   let wrapper
 
   beforeEach(() => {
     const localVue = new createLocalVue()
+    localVue.use(VueRouter)
+    localVue.use(Vuex)
     localVue.use(loadImage)
+
+    const router = new VueRouter
+    const store = new Vuex.Store({
+      modules: {
+        movie
+      }
+    })
+
     wrapper = shallowMount(Movie, {
       localVue,
       store,
-      router
+      router,
+      stubs: {
+        NuxtLink: true
+      }
     })
     router.push('/movie/tt1234567')
   })
 
-  test('최초 접속한 URL의 파라미터를 확인합니다', () => {
+  test('최초 접속한 URL을 확인합니다', () => {
     // 설정
     // 동작
     // 확인
-    expect(wrapper.vm.$route.params.id).toBe('tt1234567')
+    expect(wrapper.vm.$route.fullPath).toBe('/movie/tt1234567')
   })
 
   test('지정한 이미지 크기로 URL을 변경합니다', () => {

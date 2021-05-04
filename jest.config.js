@@ -10,7 +10,7 @@ module.exports = {
   // E.g. `import HelloWorld from '~/components/HelloWorld.vue';`
   // `<rootDir>` 토큰을 사용해 루트 경로를 참조할 수 있습니다.
   moduleNameMapper: {
-    '^~/(.*)$': '<rootDir>/src/$1'
+    '^~/(.*)$': '<rootDir>/$1'
   },
 
   // // 일치하는 경로에서는 모듈을 가져오지 않습니다.
