@@ -4,6 +4,17 @@
 
 [DEMO](https://heropy-nuxt-movie-app.herokuapp.com/)
 
+## Start
+
+터미널에서 `npx create-nuxt-app`로 Nuxt 프로젝트를 시작할 수 있습니다.
+
+```bash
+$ npx create-nuxt-app PROJECT_NAME
+$ cd PROJECT_NAME
+$ npm i
+$ code . -r
+```
+
 ## Router
 
 Nuxt는 내부적으로 [Vue Router for Vue2](https://router.vuejs.org/kr/) 플러그인을 사용하지만,<br>
