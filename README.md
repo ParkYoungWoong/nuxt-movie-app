@@ -355,7 +355,7 @@ export default {
   <meta property="og:title" content="Nuxt Movie App / Search" />
   <meta property="og:description" content="The OMDb API is a RESTful web service to obtain movie information, all content and images on the site are contributed and maintained by our users." />
   <meta property="og:image" content="https://heropy.blog/css/images/logo.png" />
-  <meta property="og:url" content="https://heropy-nuxt-movie-app.herokuapp.com/movie/tt4520988" />
+  <meta property="og:url" content="https://heropy-nuxt-movie-app.herokuapp.com" />
 </head>
 ```
 
