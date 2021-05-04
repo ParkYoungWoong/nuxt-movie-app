@@ -138,6 +138,22 @@ export default {
 
 ## Modules
 
+### 제거할 모듈(패키지)
+
+- copy-webpack-plugin
+- css-loader
+- dotenv-webpack
+- file-loader
+- html-webpack-plugin
+- netlify-cli
+- style-loader
+- vue-loader
+- vue-style-loader
+- vue-template-compiler
+- webpack
+- webpack-cli
+- webpack-dev-server
+
 ### Dotenv
 
 `dotenv-webpack` 패키지를 제거하고, `@nuxtjs/dotenv` 패키지를 새로 설치하세요!<br>
