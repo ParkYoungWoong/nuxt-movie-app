@@ -1,9 +1,10 @@
-const bodyParser = require('body-parser')
-const app = require('express')()
+const express = require('express')
 const axios = require('axios')
+
+const app = express()
 const { OMDB_API_KEY } = process.env
 
-app.use(bodyParser.json())
+app.use(express.json())
 app.post('/', async (req, res) => {
   const payload = req.body
   const { title, type, year, page, id } = payload

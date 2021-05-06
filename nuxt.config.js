@@ -70,6 +70,9 @@ export default {
   },
 
   serverMiddleware: [
-    { path: '/api/movie', handler: '~/server-middleware/movie.js' }
+    {
+      path: '/api/movie',
+      handler: '~/server-middleware/movie.js'
+    }
   ]
 }

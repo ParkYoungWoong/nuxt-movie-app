@@ -277,19 +277,20 @@ Nuxt 프로젝트에서 직접 백엔드 API를 작성합니다.<br>
 백엔드 API를 작성하기 위해 다음 패키지를 설치합니다.
 
 ```bash
-$ npm i -D body-parser express
+$ npm i -D express
 ```
 
 `server-moddleware/movie.js` 파일을 생성하고 다음과 같이 작성합니다.<br>
 약간의 차이가 있지만, 기존 프로젝트의 Netlify Serverless Functions와 비슷합니다.
 
 ```js
-const bodyParser = require('body-parser')
-const app = require('express')()
+const express = require('express')
 const axios = require('axios')
+
+const app = express()
 const { OMDB_API_KEY } = process.env
 
-app.use(bodyParser.json())
+app.use(express.json())
 app.post('/', async (req, res) => {
   const payload = req.body
   const { title, type, year, page, id } = payload
@@ -314,7 +315,7 @@ app.post('/', async (req, res) => {
 module.exports = app
 ```
 
-작성한 파일을 `nuxt.config.js`의 `serverMiddleware` 옵션에 다음과 같이 등록합니다.
+작성한 파일을 `nuxt.config.js`의 `serverMiddleware` 옵션에 다음과 같이 등록합니다.<br>
 이제 `/api/movie`로 POST 요청을 전송할 수 있습니다.
 
 ```js
